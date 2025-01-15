@@ -5,7 +5,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-green-500 via-yellow-400 to-black flex items-center justify-center">
       <div className="text-center p-8 rounded-lg shadow-lg bg-white bg-opacity-90 max-w-lg">
         <h1 className="text-4xl font-extrabold text-black font-serif mb-4">
-          Welcome to Nick & MJ's Guestbook
+          Welcome to Nick & MJ&apos;s Guestbook
         </h1>
         <p className="text-lg text-gray-700 mb-8">
           Thank you for celebrating this special day with us. Share your wishes
