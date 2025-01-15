@@ -3,7 +3,7 @@ import Link from "next/link";
 const { db } = require("@/utils/db");
 
 export default async function PostsPage() {
-  const results = await db.query(`SELECT * FROM wedding_guestbook`);
+  const results = await db.query(`SELECT * FROM guestbook`);
   const posts = results.rows;
   const user = await auth();
   console.log("This is my user log:", user);

@@ -1,7 +1,13 @@
-import Form from "../components/Form";
+import GuestForm from "../components/Form";
 
-export default function GuestForm() {
-    return (<>
-    <Form />
-    </>)
+
+
+export default function GuestPostForm() {
+ 
+  return (
+    <>
+      <h1>Form Page</h1>
+     <GuestForm/>
+    </>
+  );
 }
