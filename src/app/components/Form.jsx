@@ -1,6 +1,7 @@
 import { db } from "@/utils/db";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export default async function GuestForm() {
   const { userId } = await auth();
@@ -21,6 +22,7 @@ export default async function GuestForm() {
     );
 
     revalidatePath("/posts");
+    redirect("/posts");
   }
 
   return (
@@ -43,6 +45,7 @@ export default async function GuestForm() {
               name="guest"
               placeholder="Enter your name here"
               className="w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              required
             />
           </div>
           <div>
@@ -58,6 +61,7 @@ export default async function GuestForm() {
               placeholder="Enter your message here"
               rows="4"
               className="w-full px-4 py-2 text-gray-900 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:outline-none"
+              required
             ></textarea>
           </div>
           <input type="hidden" name="id" value={user_id} />
