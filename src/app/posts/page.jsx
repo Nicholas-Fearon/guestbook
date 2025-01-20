@@ -1,13 +1,12 @@
 import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
-const { db } = require("@/utils/db");
+import { db } from "@/utils/db";
+import DeleteButton from "@/app/components/DeleteButton";
 
 export default async function PostsPage() {
   const results = await db.query(`SELECT * FROM guestbook`);
   const posts = results.rows;
   const user = await auth();
-  console.log("This is my user log:", user);
-  console.log(posts);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-500 via-yellow-400 to-black flex flex-col items-center p-6">
@@ -41,6 +40,22 @@ export default async function PostsPage() {
             </p>
             <p className="text-gray-600 mb-4">{post.message}</p>
             <p className="text-sm text-gray-500">❤️ {post.likes} likes</p>
+            {user.userId === post.user_id && (
+              <div className="flex gap-2 mt-4">
+                <DeleteButton
+                  guest={post.guest}
+                  message={post.message}
+                  likes={post.likes}
+                  userId={post.user_id}
+                />
+                <Link
+                  href={`/edit-post/${post.id}`}
+                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300"
+                >
+                  Edit
+                </Link>
+              </div>
+            )}
           </div>
         ))}
       </div>
