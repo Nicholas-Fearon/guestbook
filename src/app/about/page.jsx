@@ -7,22 +7,16 @@ export default function About() {
           </h1>
           <div className="space-y-6 text-gray-800 leading-relaxed">
             <p>
-              Welcome to Guestbook, a polished version of my original "wedding
-              guestbook" app that I created during my Software Development
-              Bootcamp. The idea behind this app is to allow happy newlyweds to
-              have a place for their guests to post a special message for them.
+            Welcome to Guestbook, a polished and enhanced version of the “wedding guestbook” app I originally built during my Software Development Bootcamp. This app was designed to provide newlyweds with a special place where their guests can leave heartfelt messages to commemorate their big day.
             </p>
             <p>
-              Redoing this app after my bootcamp helped me better understand key
-              concepts of server-side rendering and client-side rendering. This is
-              also my first fully functioning CRUD app. This polished app
-              represents my growth and improvement of my technical knowledge.
+            Revisiting and refining this project after my bootcamp gave me a deeper understanding of critical concepts, including server-side rendering and client-side rendering. It also marks an exciting milestone as my first fully functioning CRUD app, showcasing my growth and progression in software development.
+
             </p>
             <p>
-              Looking ahead, I plan to improve the app by implementing replies to
-              posts by other users. Also, new posts will appear at the top of the
-              posts page.
+            Looking ahead, I plan to enhance the app by adding the ability for users to reply to posts, fostering more interaction. Additionally, new posts will soon appear at the top of the posts page, keeping the content dynamic and fresh.
             </p>
+            <p>Thank you for exploring this project with me—it’s a reflection of my learning journey and dedication to continuous improvement.</p>
           </div>
         </div>
       </div>
