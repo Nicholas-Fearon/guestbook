@@ -19,6 +19,18 @@ export default function Nav() {
           >
             Posts
           </Link>
+          <Link
+            href="/about"
+            className="text-white font-semibold text-lg hover:text-yellow-300 transition duration-300"
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            className="text-white font-semibold text-lg hover:text-yellow-300 transition duration-300"
+          >
+            Contact
+          </Link>
         </div>
 
         {/* User Authentication */}
