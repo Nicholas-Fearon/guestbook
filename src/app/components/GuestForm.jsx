@@ -16,6 +16,7 @@ export default async function GuestForm() {
     const guest = formData.get("guest");
     const message = formData.get("message");
 
+
     await db.query(
       `INSERT INTO guestbook (guest, message, user_id ) VALUES ($1, $2, $3)`,
       [guest, message, user_id]

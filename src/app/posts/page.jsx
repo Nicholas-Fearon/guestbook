@@ -4,7 +4,7 @@ import { db } from "@/utils/db";
 import DeleteButton from "@/app/components/DeleteButton";
 
 export default async function PostsPage() {
-  const results = await db.query(`SELECT * FROM guestbook`);
+  const results = await db.query(`SELECT * FROM guestbook ORDER BY created_at`);
   const posts = results.rows;
   const { userId } = await auth(); // Get the authenticated user ID
 
@@ -40,7 +40,6 @@ export default async function PostsPage() {
               Guest: {post.guest}
             </p>
             <p className="text-gray-600 mb-4">{post.message}</p>
-            <p className="text-sm text-gray-500">❤️ {post.likes} likes</p>
 
             {/* Only show Edit/Delete options if the user is signed in and owns the post */}
             {userId && post.user_id === userId && (
